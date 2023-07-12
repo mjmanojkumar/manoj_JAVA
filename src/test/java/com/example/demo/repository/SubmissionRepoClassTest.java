@@ -1,4 +1,4 @@
-package com.example.demo.repository;
+package src.test.java.com.example.demo.repository;
 
 import com.example.demo.Controller.SubmissionController;
 import com.example.demo.SubmissionDTO;
@@ -34,10 +34,10 @@ public class SubmissionRepoClassTest {
     @Test
     public void testPostSubmission() {
         SubmissionDTO inputForm = new SubmissionDTO();
-        inputForm.setName("Sanjana Ravula");
+        inputForm.setName("Manoj Barugu");
         inputForm.setVendorName("Kesh tech");
         inputForm.setRate(100);
-        inputForm.setLeadName("Tejan");
+        inputForm.setLeadName("Spandana");
         inputForm.setTechnology("Java");
 
         when(submissionService.postSubmission(inputForm)).thenAnswer(invocation -> {
@@ -54,10 +54,10 @@ public class SubmissionRepoClassTest {
         String id = "sampleId";
         SubmissionDTO expectedForm = new SubmissionDTO();
         expectedForm.setId(id);
-        expectedForm.setName("Sanjana Ravula");
+        expectedForm.setName("Manoj Barugu");
         expectedForm.setVendorName("Kesh Tech");
         expectedForm.setRate(100);
-        expectedForm.setLeadName("Tejan");
+        expectedForm.setLeadName("Spandana");
         expectedForm.setTechnology("Java");
 
         when(submissionService.getSubmissionFormById(id)).thenReturn(expectedForm);
@@ -73,10 +73,10 @@ public class SubmissionRepoClassTest {
     public void testEditSubmission() {
         SubmissionDTO inputForm = new SubmissionDTO();
         inputForm.setId("sampleId");
-        inputForm.setName("Sanjana Ravula");
+        inputForm.setName("Manoj Barugu");
         inputForm.setVendorName("Kesh Tech");
         inputForm.setRate(100);
-        inputForm.setLeadName("Tejan");
+        inputForm.setLeadName("Manoj");
         inputForm.setTechnology("Java");
 
         when(submissionService.editSubmission(inputForm)).thenAnswer(invocation -> {
