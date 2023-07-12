@@ -14,7 +14,7 @@ public class SubmissionController  {
     private SubmissionServiceImpl submissionService;
 
 
-    @PostMapping("/postSubmission")
+    @PostMapping("/add")
     public SubmissionDTO postSubmission(@RequestBody SubmissionDTO sf) {
         return submissionService.postSubmission(sf);
     }
@@ -27,12 +27,12 @@ public class SubmissionController  {
         return record;
     }
 
-    @GetMapping("/getallSubmissions")
+    @GetMapping("/getAllSubmissions")
     public List<SubmissionDTO> getallSubmissions() {
         return submissionService.getallSubmissions();
     }
 
-    @PutMapping("/edit")
+    @PutMapping("/update")
     public SubmissionDTO editSubmission(@RequestBody SubmissionDTO sf) {
         return submissionService.editSubmission(sf);
     }

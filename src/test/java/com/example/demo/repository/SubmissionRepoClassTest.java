@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
+
 import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
@@ -23,6 +23,7 @@ public class SubmissionRepoClassTest {
     private SubmissionServiceImpl submissionService;
 
     @InjectMocks
+
     private SubmissionController submissionResource;
 
     @BeforeEach
@@ -33,10 +34,10 @@ public class SubmissionRepoClassTest {
     @Test
     public void testPostSubmission() {
         SubmissionDTO inputForm = new SubmissionDTO();
-        inputForm.setName("John Doe");
-        inputForm.setVendorName("ABC Corp");
+        inputForm.setName("Sanjana Ravula");
+        inputForm.setVendorName("Kesh tech");
         inputForm.setRate(100);
-        inputForm.setLeadName("Jane Smith");
+        inputForm.setLeadName("Tejan");
         inputForm.setTechnology("Java");
 
         when(submissionService.postSubmission(inputForm)).thenAnswer(invocation -> {
@@ -53,10 +54,10 @@ public class SubmissionRepoClassTest {
         String id = "sampleId";
         SubmissionDTO expectedForm = new SubmissionDTO();
         expectedForm.setId(id);
-        expectedForm.setName("John Doe");
-        expectedForm.setVendorName("ABC Corp");
+        expectedForm.setName("Sanjana Ravula");
+        expectedForm.setVendorName("Kesh Tech");
         expectedForm.setRate(100);
-        expectedForm.setLeadName("Jane Smith");
+        expectedForm.setLeadName("Tejan");
         expectedForm.setTechnology("Java");
 
         when(submissionService.getSubmissionFormById(id)).thenReturn(expectedForm);
@@ -72,10 +73,10 @@ public class SubmissionRepoClassTest {
     public void testEditSubmission() {
         SubmissionDTO inputForm = new SubmissionDTO();
         inputForm.setId("sampleId");
-        inputForm.setName("John Doe");
-        inputForm.setVendorName("ABC Corp");
+        inputForm.setName("Sanjana Ravula");
+        inputForm.setVendorName("Kesh Tech");
         inputForm.setRate(100);
-        inputForm.setLeadName("Jane Smith");
+        inputForm.setLeadName("Tejan");
         inputForm.setTechnology("Java");
 
         when(submissionService.editSubmission(inputForm)).thenAnswer(invocation -> {
@@ -94,8 +95,8 @@ public class SubmissionRepoClassTest {
 
         String id = "sampleId";
         List<SubmissionDTO> expectedList = Arrays.asList(
-                new SubmissionDTO("John Doe", "ABC Corp", 100, "Jane Smith", "Java"),
-                new SubmissionDTO("Jane Doe", "XYZ Corp", 200, "John Smith", "Python")
+                new SubmissionDTO("Sanjana Ravula", "Kesh Tech", 100, "Tejan", "Java"),
+                new SubmissionDTO("Roshini Racha", "Cis tech", 85, "Manohar", "devops")
         );
         when(submissionService.deleteSubmission(id)).thenReturn(expectedList);
         List<SubmissionDTO> resultList = submissionResource.deleteSubmission(id);
